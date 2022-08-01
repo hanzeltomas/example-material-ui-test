@@ -6,6 +6,7 @@ import { EnvObject, IFiles } from '../types';
 import { VSCodeFSTransferableError } from '../vscode/errors';
 import { Directory, FileStat, FileType } from '../vscode/vfs';
 import WatcherProxyFS from '../watcher/WatcherProxyFS';
+import { Toast } from '../react-instrumentation/userFeedback';
 export interface FileWriteData {
     path: string;
     data: string;
@@ -22,6 +23,13 @@ export declare type GetProjectZipData = {
 export declare class DevWorkbench implements CodeRW, CodeDir {
     constructor(messagingService: WindowMessaging, fsPort?: number, files?: IFiles);
     private messagingService;
+    feedbackStack: {
+        toast: Toast;
+        payload: {
+            type: string;
+            payload: any;
+        };
+    }[];
     graphQLEndpoint: string;
     graphQLSecret: string;
     introspection: IntrospectionQuery;
