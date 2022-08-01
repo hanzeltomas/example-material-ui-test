@@ -1,0 +1,112 @@
+query test5Table($id: uuid!) {
+  test5Table(id: $id) {
+    ...test5Table_test5Tables
+  }
+}
+
+query test5Tables($distinct_on: [test5Tables_select_column!], $limit: Int, $offset: Int, $order_by: [test5Tables_order_by!], $where: test5Tables_bool_exp) {
+  test5Tables(distinct_on: $distinct_on, limit: $limit, offset: $offset, order_by: $order_by, where: $where) {
+    ...test5Tables_test5Tables
+  }
+}
+
+mutation deleteTest5Table($id: uuid!) {
+  deleteTest5Table(id: $id) {
+    ...deleteTest5Table_test5Tables
+  }
+}
+
+mutation deleteTest5Tables($where: test5Tables_bool_exp!) {
+  deleteTest5Tables(where: $where) {
+    ...deleteTest5Tables_test5Tables_mutation_response
+  }
+}
+
+mutation insertTest5Table($test5Tables: test5Tables_insert_input!, $on_conflict: test5Tables_on_conflict) {
+  insertTest5Table(object: $test5Tables, on_conflict: $on_conflict) {
+    ...insertTest5Table_test5Tables
+  }
+}
+
+mutation insertTest5Tables($test5Tables: [test5Tables_insert_input!]!, $on_conflict: test5Tables_on_conflict) {
+  insertTest5Tables(objects: $test5Tables, on_conflict: $on_conflict) {
+    ...insertTest5Tables_test5Tables_mutation_response
+  }
+}
+
+mutation updateTest5Table($test5Tables: test5Tables_set_input, $pk_columns: test5Tables_pk_columns_input!) {
+  updateTest5Table(_set: $test5Tables, pk_columns: $pk_columns) {
+    ...updateTest5Table_test5Tables
+  }
+}
+
+mutation updateTest5Tables($test5Tables: test5Tables_set_input, $where: test5Tables_bool_exp!) {
+  updateTest5Tables(_set: $test5Tables, where: $where) {
+    ...updateTest5Tables_test5Tables_mutation_response
+  }
+}
+
+fragment test5Table_test5Tables on test5Tables {
+  id
+  name
+  createdAt
+  updatedAt
+}
+
+fragment test5Tables_test5Tables on test5Tables {
+  id
+  name
+  createdAt
+  updatedAt
+}
+
+fragment deleteTest5Table_test5Tables on test5Tables {
+  id
+  name
+  createdAt
+  updatedAt
+}
+
+fragment deleteTest5Tables_test5Tables_mutation_response on test5Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    updatedAt
+  }
+}
+
+fragment insertTest5Table_test5Tables on test5Tables {
+  id
+  name
+  createdAt
+  updatedAt
+}
+
+fragment insertTest5Tables_test5Tables_mutation_response on test5Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    updatedAt
+  }
+}
+
+fragment updateTest5Table_test5Tables on test5Tables {
+  id
+  name
+  createdAt
+  updatedAt
+}
+
+fragment updateTest5Tables_test5Tables_mutation_response on test5Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    updatedAt
+  }
+}

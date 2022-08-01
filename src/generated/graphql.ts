@@ -5208,87 +5208,85 @@ export type DummyQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type DummyQuery = { __typename: 'query_root' };
 
-export type Order_ProductsQueryVariables = Exact<{
-  distinct_on?: InputMaybe<Array<Order_Products_Select_Column> | Order_Products_Select_Column>;
+export type Test5TableQueryVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type Test5TableQuery = { __typename?: 'query_root', test5Table?: { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any } | null };
+
+export type Test5TablesQueryVariables = Exact<{
+  distinct_on?: InputMaybe<Array<Test5Tables_Select_Column> | Test5Tables_Select_Column>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Order_Products_Order_By> | Order_Products_Order_By>;
-  where?: InputMaybe<Order_Products_Bool_Exp>;
+  order_by?: InputMaybe<Array<Test5Tables_Order_By> | Test5Tables_Order_By>;
+  where?: InputMaybe<Test5Tables_Bool_Exp>;
 }>;
 
 
-export type Order_ProductsQuery = { __typename?: 'query_root', order_products: Array<{ __typename?: 'order_products', id: any, name: string }> };
+export type Test5TablesQuery = { __typename?: 'query_root', test5Tables: Array<{ __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any }> };
 
-export type Order_Products_By_PkQueryVariables = Exact<{
+export type DeleteTest5TableMutationVariables = Exact<{
   id: Scalars['uuid'];
 }>;
 
 
-export type Order_Products_By_PkQuery = { __typename?: 'query_root', order_products_by_pk?: { __typename?: 'order_products', id: any, name: string } | null };
+export type DeleteTest5TableMutation = { __typename?: 'mutation_root', deleteTest5Table?: { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any } | null };
 
-export type Delete_Order_ProductsMutationVariables = Exact<{
-  where: Order_Products_Bool_Exp;
+export type DeleteTest5TablesMutationVariables = Exact<{
+  where: Test5Tables_Bool_Exp;
 }>;
 
 
-export type Delete_Order_ProductsMutation = { __typename?: 'mutation_root', delete_order_products?: { __typename?: 'order_products_mutation_response', returning: Array<{ __typename?: 'order_products', created_at: any, id: any, is_valid: boolean, name: string, order_id: number, price: any, updated_at: any }> } | null };
+export type DeleteTest5TablesMutation = { __typename?: 'mutation_root', deleteTest5Tables?: { __typename?: 'test5Tables_mutation_response', returning: Array<{ __typename?: 'test5Tables', createdAt: any, id: any, isDeleted: boolean, name: string, updatedAt: any }> } | null };
 
-export type Delete_Order_Products_By_PkMutationVariables = Exact<{
-  id: Scalars['uuid'];
+export type InsertTest5TableMutationVariables = Exact<{
+  test5Tables: Test5Tables_Insert_Input;
+  on_conflict?: InputMaybe<Test5Tables_On_Conflict>;
 }>;
 
 
-export type Delete_Order_Products_By_PkMutation = { __typename?: 'mutation_root', delete_order_products_by_pk?: { __typename?: 'order_products', id: any, name: string } | null };
+export type InsertTest5TableMutation = { __typename?: 'mutation_root', insertTest5Table?: { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any } | null };
 
-export type Insert_Order_ProductsMutationVariables = Exact<{
-  order_products: Array<Order_Products_Insert_Input> | Order_Products_Insert_Input;
-  on_conflict?: InputMaybe<Order_Products_On_Conflict>;
+export type InsertTest5TablesMutationVariables = Exact<{
+  test5Tables: Array<Test5Tables_Insert_Input> | Test5Tables_Insert_Input;
+  on_conflict?: InputMaybe<Test5Tables_On_Conflict>;
 }>;
 
 
-export type Insert_Order_ProductsMutation = { __typename?: 'mutation_root', insert_order_products?: { __typename?: 'order_products_mutation_response', returning: Array<{ __typename?: 'order_products', created_at: any, id: any, is_valid: boolean, name: string, order_id: number, price: any, updated_at: any }> } | null };
+export type InsertTest5TablesMutation = { __typename?: 'mutation_root', insertTest5Tables?: { __typename?: 'test5Tables_mutation_response', returning: Array<{ __typename?: 'test5Tables', createdAt: any, id: any, isDeleted: boolean, name: string, updatedAt: any }> } | null };
 
-export type Insert_Order_Products_OneMutationVariables = Exact<{
-  order_products: Order_Products_Insert_Input;
-  on_conflict?: InputMaybe<Order_Products_On_Conflict>;
+export type UpdateTest5TableMutationVariables = Exact<{
+  test5Tables?: InputMaybe<Test5Tables_Set_Input>;
+  pk_columns: Test5Tables_Pk_Columns_Input;
 }>;
 
 
-export type Insert_Order_Products_OneMutation = { __typename?: 'mutation_root', insert_order_products_one?: { __typename?: 'order_products', id: any, name: string } | null };
+export type UpdateTest5TableMutation = { __typename?: 'mutation_root', updateTest5Table?: { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any } | null };
 
-export type Update_Order_ProductsMutationVariables = Exact<{
-  _inc?: InputMaybe<Order_Products_Inc_Input>;
-  order_products?: InputMaybe<Order_Products_Set_Input>;
-  where: Order_Products_Bool_Exp;
+export type UpdateTest5TablesMutationVariables = Exact<{
+  test5Tables?: InputMaybe<Test5Tables_Set_Input>;
+  where: Test5Tables_Bool_Exp;
 }>;
 
 
-export type Update_Order_ProductsMutation = { __typename?: 'mutation_root', update_order_products?: { __typename?: 'order_products_mutation_response', returning: Array<{ __typename?: 'order_products', created_at: any, id: any, is_valid: boolean, name: string, order_id: number, price: any, updated_at: any }> } | null };
+export type UpdateTest5TablesMutation = { __typename?: 'mutation_root', updateTest5Tables?: { __typename?: 'test5Tables_mutation_response', returning: Array<{ __typename?: 'test5Tables', createdAt: any, id: any, isDeleted: boolean, name: string, updatedAt: any }> } | null };
 
-export type Update_Order_Products_By_PkMutationVariables = Exact<{
-  _inc?: InputMaybe<Order_Products_Inc_Input>;
-  order_products?: InputMaybe<Order_Products_Set_Input>;
-  pk_columns: Order_Products_Pk_Columns_Input;
-}>;
+export type Test5Table_Test5TablesFragment = { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any };
 
+export type Test5Tables_Test5TablesFragment = { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any };
 
-export type Update_Order_Products_By_PkMutation = { __typename?: 'mutation_root', update_order_products_by_pk?: { __typename?: 'order_products', id: any, name: string } | null };
+export type DeleteTest5Table_Test5TablesFragment = { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any };
 
-export type Order_Products_Order_ProductsFragment = { __typename?: 'order_products', id: any, name: string };
+export type DeleteTest5Tables_Test5Tables_Mutation_ResponseFragment = { __typename?: 'test5Tables_mutation_response', returning: Array<{ __typename?: 'test5Tables', createdAt: any, id: any, isDeleted: boolean, name: string, updatedAt: any }> };
 
-export type Order_Products_By_Pk_Order_ProductsFragment = { __typename?: 'order_products', id: any, name: string };
+export type InsertTest5Table_Test5TablesFragment = { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any };
 
-export type Delete_Order_Products_Order_Products_Mutation_ResponseFragment = { __typename?: 'order_products_mutation_response', returning: Array<{ __typename?: 'order_products', created_at: any, id: any, is_valid: boolean, name: string, order_id: number, price: any, updated_at: any }> };
+export type InsertTest5Tables_Test5Tables_Mutation_ResponseFragment = { __typename?: 'test5Tables_mutation_response', returning: Array<{ __typename?: 'test5Tables', createdAt: any, id: any, isDeleted: boolean, name: string, updatedAt: any }> };
 
-export type Delete_Order_Products_By_Pk_Order_ProductsFragment = { __typename?: 'order_products', id: any, name: string };
+export type UpdateTest5Table_Test5TablesFragment = { __typename?: 'test5Tables', id: any, name: string, createdAt: any, updatedAt: any };
 
-export type Insert_Order_Products_Order_Products_Mutation_ResponseFragment = { __typename?: 'order_products_mutation_response', returning: Array<{ __typename?: 'order_products', created_at: any, id: any, is_valid: boolean, name: string, order_id: number, price: any, updated_at: any }> };
-
-export type Insert_Order_Products_One_Order_ProductsFragment = { __typename?: 'order_products', id: any, name: string };
-
-export type Update_Order_Products_Order_Products_Mutation_ResponseFragment = { __typename?: 'order_products_mutation_response', returning: Array<{ __typename?: 'order_products', created_at: any, id: any, is_valid: boolean, name: string, order_id: number, price: any, updated_at: any }> };
-
-export type Update_Order_Products_By_Pk_Order_ProductsFragment = { __typename?: 'order_products', id: any, name: string };
+export type UpdateTest5Tables_Test5Tables_Mutation_ResponseFragment = { __typename?: 'test5Tables_mutation_response', returning: Array<{ __typename?: 'test5Tables', createdAt: any, id: any, isDeleted: boolean, name: string, updatedAt: any }> };
 
 export type OrdersQueryVariables = Exact<{
   distinct_on?: InputMaybe<Array<Orders_Select_Column> | Orders_Select_Column>;
@@ -5452,73 +5450,77 @@ export type UpdateCustomer_CustomersFragment = { __typename?: 'customers', id: a
 
 export type UpdateCustomers_Customers_Mutation_ResponseFragment = { __typename?: 'customers_mutation_response', returning: Array<{ __typename?: 'customers', createdAt: any, dateOfBirth?: any | null, firstName?: string | null, glbPath?: string | null, id: any, isValid: boolean, lastName: string, updatedAt: any, vip: boolean }> };
 
-export const Order_Products_Order_ProductsFragmentDoc = gql`
-    fragment order_products_order_products on order_products {
+export const Test5Table_Test5TablesFragmentDoc = gql`
+    fragment test5Table_test5Tables on test5Tables {
   id
   name
+  createdAt
+  updatedAt
 }
     `;
-export const Order_Products_By_Pk_Order_ProductsFragmentDoc = gql`
-    fragment order_products_by_pk_order_products on order_products {
+export const Test5Tables_Test5TablesFragmentDoc = gql`
+    fragment test5Tables_test5Tables on test5Tables {
   id
   name
+  createdAt
+  updatedAt
 }
     `;
-export const Delete_Order_Products_Order_Products_Mutation_ResponseFragmentDoc = gql`
-    fragment delete_order_products_order_products_mutation_response on order_products_mutation_response {
+export const DeleteTest5Table_Test5TablesFragmentDoc = gql`
+    fragment deleteTest5Table_test5Tables on test5Tables {
+  id
+  name
+  createdAt
+  updatedAt
+}
+    `;
+export const DeleteTest5Tables_Test5Tables_Mutation_ResponseFragmentDoc = gql`
+    fragment deleteTest5Tables_test5Tables_mutation_response on test5Tables_mutation_response {
   returning {
-    created_at
+    createdAt
     id
-    is_valid
+    isDeleted
     name
-    order_id
-    price
-    updated_at
+    updatedAt
   }
 }
     `;
-export const Delete_Order_Products_By_Pk_Order_ProductsFragmentDoc = gql`
-    fragment delete_order_products_by_pk_order_products on order_products {
+export const InsertTest5Table_Test5TablesFragmentDoc = gql`
+    fragment insertTest5Table_test5Tables on test5Tables {
   id
   name
+  createdAt
+  updatedAt
 }
     `;
-export const Insert_Order_Products_Order_Products_Mutation_ResponseFragmentDoc = gql`
-    fragment insert_order_products_order_products_mutation_response on order_products_mutation_response {
+export const InsertTest5Tables_Test5Tables_Mutation_ResponseFragmentDoc = gql`
+    fragment insertTest5Tables_test5Tables_mutation_response on test5Tables_mutation_response {
   returning {
-    created_at
+    createdAt
     id
-    is_valid
+    isDeleted
     name
-    order_id
-    price
-    updated_at
+    updatedAt
   }
 }
     `;
-export const Insert_Order_Products_One_Order_ProductsFragmentDoc = gql`
-    fragment insert_order_products_one_order_products on order_products {
+export const UpdateTest5Table_Test5TablesFragmentDoc = gql`
+    fragment updateTest5Table_test5Tables on test5Tables {
   id
   name
+  createdAt
+  updatedAt
 }
     `;
-export const Update_Order_Products_Order_Products_Mutation_ResponseFragmentDoc = gql`
-    fragment update_order_products_order_products_mutation_response on order_products_mutation_response {
+export const UpdateTest5Tables_Test5Tables_Mutation_ResponseFragmentDoc = gql`
+    fragment updateTest5Tables_test5Tables_mutation_response on test5Tables_mutation_response {
   returning {
-    created_at
+    createdAt
     id
-    is_valid
+    isDeleted
     name
-    order_id
-    price
-    updated_at
+    updatedAt
   }
-}
-    `;
-export const Update_Order_Products_By_Pk_Order_ProductsFragmentDoc = gql`
-    fragment update_order_products_by_pk_order_products on order_products {
-  id
-  name
 }
     `;
 export const Orders_OrdersFragmentDoc = gql`
@@ -5704,103 +5706,99 @@ export const DummyDocument = gql`
 export function useDummyQuery(options?: Omit<Urql.UseQueryArgs<DummyQueryVariables>, 'query'>) {
   return Urql.useQuery<DummyQuery>({ query: DummyDocument, ...options });
 };
-export const Order_ProductsDocument = gql`
-    query order_products($distinct_on: [order_products_select_column!], $limit: Int, $offset: Int, $order_by: [order_products_order_by!] = {updated_at: desc}, $where: order_products_bool_exp) {
-  order_products(
+export const Test5TableDocument = gql`
+    query test5Table($id: uuid!) {
+  test5Table(id: $id) {
+    ...test5Table_test5Tables
+  }
+}
+    ${Test5Table_Test5TablesFragmentDoc}`;
+
+export function useTest5TableQuery(options: Omit<Urql.UseQueryArgs<Test5TableQueryVariables>, 'query'>) {
+  return Urql.useQuery<Test5TableQuery>({ query: Test5TableDocument, ...options });
+};
+export const Test5TablesDocument = gql`
+    query test5Tables($distinct_on: [test5Tables_select_column!], $limit: Int, $offset: Int, $order_by: [test5Tables_order_by!], $where: test5Tables_bool_exp) {
+  test5Tables(
     distinct_on: $distinct_on
     limit: $limit
     offset: $offset
     order_by: $order_by
     where: $where
   ) {
-    ...order_products_order_products
+    ...test5Tables_test5Tables
   }
 }
-    ${Order_Products_Order_ProductsFragmentDoc}`;
+    ${Test5Tables_Test5TablesFragmentDoc}`;
 
-export function useOrder_ProductsQuery(options?: Omit<Urql.UseQueryArgs<Order_ProductsQueryVariables>, 'query'>) {
-  return Urql.useQuery<Order_ProductsQuery>({ query: Order_ProductsDocument, ...options });
+export function useTest5TablesQuery(options?: Omit<Urql.UseQueryArgs<Test5TablesQueryVariables>, 'query'>) {
+  return Urql.useQuery<Test5TablesQuery>({ query: Test5TablesDocument, ...options });
 };
-export const Order_Products_By_PkDocument = gql`
-    query order_products_by_pk($id: uuid!) {
-  order_products_by_pk(id: $id) {
-    ...order_products_by_pk_order_products
+export const DeleteTest5TableDocument = gql`
+    mutation deleteTest5Table($id: uuid!) {
+  deleteTest5Table(id: $id) {
+    ...deleteTest5Table_test5Tables
   }
 }
-    ${Order_Products_By_Pk_Order_ProductsFragmentDoc}`;
+    ${DeleteTest5Table_Test5TablesFragmentDoc}`;
 
-export function useOrder_Products_By_PkQuery(options: Omit<Urql.UseQueryArgs<Order_Products_By_PkQueryVariables>, 'query'>) {
-  return Urql.useQuery<Order_Products_By_PkQuery>({ query: Order_Products_By_PkDocument, ...options });
+export function useDeleteTest5TableMutation() {
+  return Urql.useMutation<DeleteTest5TableMutation, DeleteTest5TableMutationVariables>(DeleteTest5TableDocument);
 };
-export const Delete_Order_ProductsDocument = gql`
-    mutation delete_order_products($where: order_products_bool_exp!) {
-  delete_order_products(where: $where) {
-    ...delete_order_products_order_products_mutation_response
+export const DeleteTest5TablesDocument = gql`
+    mutation deleteTest5Tables($where: test5Tables_bool_exp!) {
+  deleteTest5Tables(where: $where) {
+    ...deleteTest5Tables_test5Tables_mutation_response
   }
 }
-    ${Delete_Order_Products_Order_Products_Mutation_ResponseFragmentDoc}`;
+    ${DeleteTest5Tables_Test5Tables_Mutation_ResponseFragmentDoc}`;
 
-export function useDelete_Order_ProductsMutation() {
-  return Urql.useMutation<Delete_Order_ProductsMutation, Delete_Order_ProductsMutationVariables>(Delete_Order_ProductsDocument);
+export function useDeleteTest5TablesMutation() {
+  return Urql.useMutation<DeleteTest5TablesMutation, DeleteTest5TablesMutationVariables>(DeleteTest5TablesDocument);
 };
-export const Delete_Order_Products_By_PkDocument = gql`
-    mutation delete_order_products_by_pk($id: uuid!) {
-  delete_order_products_by_pk(id: $id) {
-    ...delete_order_products_by_pk_order_products
+export const InsertTest5TableDocument = gql`
+    mutation insertTest5Table($test5Tables: test5Tables_insert_input!, $on_conflict: test5Tables_on_conflict) {
+  insertTest5Table(object: $test5Tables, on_conflict: $on_conflict) {
+    ...insertTest5Table_test5Tables
   }
 }
-    ${Delete_Order_Products_By_Pk_Order_ProductsFragmentDoc}`;
+    ${InsertTest5Table_Test5TablesFragmentDoc}`;
 
-export function useDelete_Order_Products_By_PkMutation() {
-  return Urql.useMutation<Delete_Order_Products_By_PkMutation, Delete_Order_Products_By_PkMutationVariables>(Delete_Order_Products_By_PkDocument);
+export function useInsertTest5TableMutation() {
+  return Urql.useMutation<InsertTest5TableMutation, InsertTest5TableMutationVariables>(InsertTest5TableDocument);
 };
-export const Insert_Order_ProductsDocument = gql`
-    mutation insert_order_products($order_products: [order_products_insert_input!]!, $on_conflict: order_products_on_conflict) {
-  insert_order_products(objects: $order_products, on_conflict: $on_conflict) {
-    ...insert_order_products_order_products_mutation_response
+export const InsertTest5TablesDocument = gql`
+    mutation insertTest5Tables($test5Tables: [test5Tables_insert_input!]!, $on_conflict: test5Tables_on_conflict) {
+  insertTest5Tables(objects: $test5Tables, on_conflict: $on_conflict) {
+    ...insertTest5Tables_test5Tables_mutation_response
   }
 }
-    ${Insert_Order_Products_Order_Products_Mutation_ResponseFragmentDoc}`;
+    ${InsertTest5Tables_Test5Tables_Mutation_ResponseFragmentDoc}`;
 
-export function useInsert_Order_ProductsMutation() {
-  return Urql.useMutation<Insert_Order_ProductsMutation, Insert_Order_ProductsMutationVariables>(Insert_Order_ProductsDocument);
+export function useInsertTest5TablesMutation() {
+  return Urql.useMutation<InsertTest5TablesMutation, InsertTest5TablesMutationVariables>(InsertTest5TablesDocument);
 };
-export const Insert_Order_Products_OneDocument = gql`
-    mutation insert_order_products_one($order_products: order_products_insert_input!, $on_conflict: order_products_on_conflict) {
-  insert_order_products_one(object: $order_products, on_conflict: $on_conflict) {
-    ...insert_order_products_one_order_products
+export const UpdateTest5TableDocument = gql`
+    mutation updateTest5Table($test5Tables: test5Tables_set_input, $pk_columns: test5Tables_pk_columns_input!) {
+  updateTest5Table(_set: $test5Tables, pk_columns: $pk_columns) {
+    ...updateTest5Table_test5Tables
   }
 }
-    ${Insert_Order_Products_One_Order_ProductsFragmentDoc}`;
+    ${UpdateTest5Table_Test5TablesFragmentDoc}`;
 
-export function useInsert_Order_Products_OneMutation() {
-  return Urql.useMutation<Insert_Order_Products_OneMutation, Insert_Order_Products_OneMutationVariables>(Insert_Order_Products_OneDocument);
+export function useUpdateTest5TableMutation() {
+  return Urql.useMutation<UpdateTest5TableMutation, UpdateTest5TableMutationVariables>(UpdateTest5TableDocument);
 };
-export const Update_Order_ProductsDocument = gql`
-    mutation update_order_products($_inc: order_products_inc_input, $order_products: order_products_set_input, $where: order_products_bool_exp!) {
-  update_order_products(_inc: $_inc, _set: $order_products, where: $where) {
-    ...update_order_products_order_products_mutation_response
+export const UpdateTest5TablesDocument = gql`
+    mutation updateTest5Tables($test5Tables: test5Tables_set_input, $where: test5Tables_bool_exp!) {
+  updateTest5Tables(_set: $test5Tables, where: $where) {
+    ...updateTest5Tables_test5Tables_mutation_response
   }
 }
-    ${Update_Order_Products_Order_Products_Mutation_ResponseFragmentDoc}`;
+    ${UpdateTest5Tables_Test5Tables_Mutation_ResponseFragmentDoc}`;
 
-export function useUpdate_Order_ProductsMutation() {
-  return Urql.useMutation<Update_Order_ProductsMutation, Update_Order_ProductsMutationVariables>(Update_Order_ProductsDocument);
-};
-export const Update_Order_Products_By_PkDocument = gql`
-    mutation update_order_products_by_pk($_inc: order_products_inc_input, $order_products: order_products_set_input, $pk_columns: order_products_pk_columns_input!) {
-  update_order_products_by_pk(
-    _inc: $_inc
-    _set: $order_products
-    pk_columns: $pk_columns
-  ) {
-    ...update_order_products_by_pk_order_products
-  }
-}
-    ${Update_Order_Products_By_Pk_Order_ProductsFragmentDoc}`;
-
-export function useUpdate_Order_Products_By_PkMutation() {
-  return Urql.useMutation<Update_Order_Products_By_PkMutation, Update_Order_Products_By_PkMutationVariables>(Update_Order_Products_By_PkDocument);
+export function useUpdateTest5TablesMutation() {
+  return Urql.useMutation<UpdateTest5TablesMutation, UpdateTest5TablesMutationVariables>(UpdateTest5TablesDocument);
 };
 export const OrdersDocument = gql`
     query orders($distinct_on: [orders_select_column!], $limit: Int, $offset: Int, $order_by: [orders_order_by!] = {updated_at: desc}, $where: orders_bool_exp) {
