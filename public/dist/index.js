@@ -97606,6 +97606,7 @@ class WatcherProxyFS {
     const changedFile = await this.readHistoryFile(normalizedPath);
     if (changedFile == null) {
       const fileExist = await this.delegate.readFile(path2);
+      console.log(fileExist);
       this.writeHistoryFile(normalizedPath, data, fileExist == void 0);
     } else {
       this.writeHistoryFile(normalizedPath, data, changedFile.newFile);
