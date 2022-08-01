@@ -98641,7 +98641,7 @@ class WatcherProxyFS {
     if (changedFile == null) {
       const fileExist = await this.delegate.readFile(path2);
       console.log(fileExist);
-      this.writeHistoryFile(normalizedPath, data, fileExist == void 0);
+      this.writeHistoryFile(normalizedPath, data, fileExist == void 0 || fileExist instanceof VSCodeFSTransferableError);
     } else {
       this.writeHistoryFile(normalizedPath, data, changedFile.newFile);
     }
