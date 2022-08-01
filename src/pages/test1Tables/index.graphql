@@ -1,0 +1,171 @@
+query test1Table($id: uuid!) {
+  test1Table(id: $id) {
+    ...test1Table_test1Tables
+  }
+}
+
+query test1Tables($distinct_on: [test1Tables_select_column!], $limit: Int, $offset: Int, $order_by: [test1Tables_order_by!] = { updatedAt: desc }, $where: test1Tables_bool_exp) {
+  test1Tables(distinct_on: $distinct_on, limit: $limit, offset: $offset, order_by: $order_by, where: $where) {
+    ...test1Tables_test1Tables
+  }
+}
+
+mutation deleteTest1Table($id: uuid!) {
+  deleteTest1Table(id: $id) {
+    ...deleteTest1Table_test1Tables
+  }
+}
+
+mutation deleteTest1Tables($where: test1Tables_bool_exp!) {
+  deleteTest1Tables(where: $where) {
+    ...deleteTest1Tables_test1Tables_mutation_response
+  }
+}
+
+mutation insertTest1Table($test1Tables: test1Tables_insert_input!, $on_conflict: test1Tables_on_conflict) {
+  insertTest1Table(object: $test1Tables, on_conflict: $on_conflict) {
+    ...insertTest1Table_test1Tables
+  }
+}
+
+mutation insertTest1Tables($test1Tables: [test1Tables_insert_input!]!, $on_conflict: test1Tables_on_conflict) {
+  insertTest1Tables(objects: $test1Tables, on_conflict: $on_conflict) {
+    ...insertTest1Tables_test1Tables_mutation_response
+  }
+}
+
+mutation updateTest1Table($test1Tables: test1Tables_set_input, $pk_columns: test1Tables_pk_columns_input!) {
+  updateTest1Table(_set: $test1Tables, pk_columns: $pk_columns) {
+    ...updateTest1Table_test1Tables
+  }
+}
+
+mutation updateTest1Tables($test1Tables: test1Tables_set_input, $where: test1Tables_bool_exp!) {
+  updateTest1Tables(_set: $test1Tables, where: $where) {
+    ...updateTest1Tables_test1Tables_mutation_response
+  }
+}
+
+fragment test1Table_test1Tables on test1Tables {
+  id
+  name
+  firstName
+  test
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment test1Tables_test1Tables on test1Tables {
+  id
+  name
+  firstName
+  test
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment deleteTest1Table_test1Tables on test1Tables {
+  id
+  name
+  firstName
+  test
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment deleteTest1Tables_test1Tables_mutation_response on test1Tables_mutation_response {
+  returning {
+    createdAt
+    firstName
+    id
+    isDeleted
+    name
+    test
+    test2
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    testName
+    updatedAt
+  }
+}
+
+fragment insertTest1Table_test1Tables on test1Tables {
+  id
+  name
+  firstName
+  test
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment insertTest1Tables_test1Tables_mutation_response on test1Tables_mutation_response {
+  returning {
+    createdAt
+    firstName
+    id
+    isDeleted
+    name
+    test
+    test2
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    testName
+    updatedAt
+  }
+}
+
+fragment updateTest1Table_test1Tables on test1Tables {
+  id
+  name
+  firstName
+  test
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment updateTest1Tables_test1Tables_mutation_response on test1Tables_mutation_response {
+  returning {
+    createdAt
+    firstName
+    id
+    isDeleted
+    name
+    test
+    test2
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    testName
+    updatedAt
+  }
+}
