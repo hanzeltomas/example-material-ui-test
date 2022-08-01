@@ -5208,6 +5208,86 @@ export type DummyQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type DummyQuery = { __typename: 'query_root' };
 
+export type Test2TableQueryVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type Test2TableQuery = { __typename?: 'query_root', test2Table?: { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any } | null };
+
+export type Test2TablesQueryVariables = Exact<{
+  distinct_on?: InputMaybe<Array<Test2Tables_Select_Column> | Test2Tables_Select_Column>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Test2Tables_Order_By> | Test2Tables_Order_By>;
+  where?: InputMaybe<Test2Tables_Bool_Exp>;
+}>;
+
+
+export type Test2TablesQuery = { __typename?: 'query_root', test2Tables: Array<{ __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any }> };
+
+export type DeleteTest2TableMutationVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+
+export type DeleteTest2TableMutation = { __typename?: 'mutation_root', deleteTest2Table?: { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any } | null };
+
+export type DeleteTest2TablesMutationVariables = Exact<{
+  where: Test2Tables_Bool_Exp;
+}>;
+
+
+export type DeleteTest2TablesMutation = { __typename?: 'mutation_root', deleteTest2Tables?: { __typename?: 'test2Tables_mutation_response', returning: Array<{ __typename?: 'test2Tables', createdAt: any, id: any, isDeleted: boolean, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, updatedAt: any }> } | null };
+
+export type InsertTest2TableMutationVariables = Exact<{
+  test2Tables: Test2Tables_Insert_Input;
+  on_conflict?: InputMaybe<Test2Tables_On_Conflict>;
+}>;
+
+
+export type InsertTest2TableMutation = { __typename?: 'mutation_root', insertTest2Table?: { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any } | null };
+
+export type InsertTest2TablesMutationVariables = Exact<{
+  test2Tables: Array<Test2Tables_Insert_Input> | Test2Tables_Insert_Input;
+  on_conflict?: InputMaybe<Test2Tables_On_Conflict>;
+}>;
+
+
+export type InsertTest2TablesMutation = { __typename?: 'mutation_root', insertTest2Tables?: { __typename?: 'test2Tables_mutation_response', returning: Array<{ __typename?: 'test2Tables', createdAt: any, id: any, isDeleted: boolean, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, updatedAt: any }> } | null };
+
+export type UpdateTest2TableMutationVariables = Exact<{
+  test2Tables?: InputMaybe<Test2Tables_Set_Input>;
+  pk_columns: Test2Tables_Pk_Columns_Input;
+}>;
+
+
+export type UpdateTest2TableMutation = { __typename?: 'mutation_root', updateTest2Table?: { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any } | null };
+
+export type UpdateTest2TablesMutationVariables = Exact<{
+  test2Tables?: InputMaybe<Test2Tables_Set_Input>;
+  where: Test2Tables_Bool_Exp;
+}>;
+
+
+export type UpdateTest2TablesMutation = { __typename?: 'mutation_root', updateTest2Tables?: { __typename?: 'test2Tables_mutation_response', returning: Array<{ __typename?: 'test2Tables', createdAt: any, id: any, isDeleted: boolean, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, updatedAt: any }> } | null };
+
+export type Test2Table_Test2TablesFragment = { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any };
+
+export type Test2Tables_Test2TablesFragment = { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any };
+
+export type DeleteTest2Table_Test2TablesFragment = { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any };
+
+export type DeleteTest2Tables_Test2Tables_Mutation_ResponseFragment = { __typename?: 'test2Tables_mutation_response', returning: Array<{ __typename?: 'test2Tables', createdAt: any, id: any, isDeleted: boolean, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, updatedAt: any }> };
+
+export type InsertTest2Table_Test2TablesFragment = { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any };
+
+export type InsertTest2Tables_Test2Tables_Mutation_ResponseFragment = { __typename?: 'test2Tables_mutation_response', returning: Array<{ __typename?: 'test2Tables', createdAt: any, id: any, isDeleted: boolean, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, updatedAt: any }> };
+
+export type UpdateTest2Table_Test2TablesFragment = { __typename?: 'test2Tables', id: any, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, createdAt: any, updatedAt: any };
+
+export type UpdateTest2Tables_Test2Tables_Mutation_ResponseFragment = { __typename?: 'test2Tables_mutation_response', returning: Array<{ __typename?: 'test2Tables', createdAt: any, id: any, isDeleted: boolean, name: string, test2Name?: string | null, test3Name?: string | null, test4Name?: string | null, test5Name?: string | null, test6Name?: string | null, testName?: string | null, updatedAt: any }> };
+
 export type Test1TableQueryVariables = Exact<{
   id: Scalars['uuid'];
 }>;
@@ -5612,6 +5692,127 @@ export type UpdateCustomer_CustomersFragment = { __typename?: 'customers', id: a
 
 export type UpdateCustomers_Customers_Mutation_ResponseFragment = { __typename?: 'customers_mutation_response', returning: Array<{ __typename?: 'customers', createdAt: any, dateOfBirth?: any | null, firstName?: string | null, glbPath?: string | null, id: any, isValid: boolean, lastName: string, updatedAt: any, vip: boolean }> };
 
+export const Test2Table_Test2TablesFragmentDoc = gql`
+    fragment test2Table_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+    `;
+export const Test2Tables_Test2TablesFragmentDoc = gql`
+    fragment test2Tables_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+    `;
+export const DeleteTest2Table_Test2TablesFragmentDoc = gql`
+    fragment deleteTest2Table_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+    `;
+export const DeleteTest2Tables_Test2Tables_Mutation_ResponseFragmentDoc = gql`
+    fragment deleteTest2Tables_test2Tables_mutation_response on test2Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    test6Name
+    testName
+    updatedAt
+  }
+}
+    `;
+export const InsertTest2Table_Test2TablesFragmentDoc = gql`
+    fragment insertTest2Table_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+    `;
+export const InsertTest2Tables_Test2Tables_Mutation_ResponseFragmentDoc = gql`
+    fragment insertTest2Tables_test2Tables_mutation_response on test2Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    test6Name
+    testName
+    updatedAt
+  }
+}
+    `;
+export const UpdateTest2Table_Test2TablesFragmentDoc = gql`
+    fragment updateTest2Table_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+    `;
+export const UpdateTest2Tables_Test2Tables_Mutation_ResponseFragmentDoc = gql`
+    fragment updateTest2Tables_test2Tables_mutation_response on test2Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    test6Name
+    testName
+    updatedAt
+  }
+}
+    `;
 export const Test1Table_Test1TablesFragmentDoc = gql`
     fragment test1Table_test1Tables on test1Tables {
   id
@@ -6068,6 +6269,100 @@ export const DummyDocument = gql`
 
 export function useDummyQuery(options?: Omit<Urql.UseQueryArgs<DummyQueryVariables>, 'query'>) {
   return Urql.useQuery<DummyQuery>({ query: DummyDocument, ...options });
+};
+export const Test2TableDocument = gql`
+    query test2Table($id: uuid!) {
+  test2Table(id: $id) {
+    ...test2Table_test2Tables
+  }
+}
+    ${Test2Table_Test2TablesFragmentDoc}`;
+
+export function useTest2TableQuery(options: Omit<Urql.UseQueryArgs<Test2TableQueryVariables>, 'query'>) {
+  return Urql.useQuery<Test2TableQuery>({ query: Test2TableDocument, ...options });
+};
+export const Test2TablesDocument = gql`
+    query test2Tables($distinct_on: [test2Tables_select_column!], $limit: Int, $offset: Int, $order_by: [test2Tables_order_by!] = {updatedAt: desc}, $where: test2Tables_bool_exp) {
+  test2Tables(
+    distinct_on: $distinct_on
+    limit: $limit
+    offset: $offset
+    order_by: $order_by
+    where: $where
+  ) {
+    ...test2Tables_test2Tables
+  }
+}
+    ${Test2Tables_Test2TablesFragmentDoc}`;
+
+export function useTest2TablesQuery(options?: Omit<Urql.UseQueryArgs<Test2TablesQueryVariables>, 'query'>) {
+  return Urql.useQuery<Test2TablesQuery>({ query: Test2TablesDocument, ...options });
+};
+export const DeleteTest2TableDocument = gql`
+    mutation deleteTest2Table($id: uuid!) {
+  deleteTest2Table(id: $id) {
+    ...deleteTest2Table_test2Tables
+  }
+}
+    ${DeleteTest2Table_Test2TablesFragmentDoc}`;
+
+export function useDeleteTest2TableMutation() {
+  return Urql.useMutation<DeleteTest2TableMutation, DeleteTest2TableMutationVariables>(DeleteTest2TableDocument);
+};
+export const DeleteTest2TablesDocument = gql`
+    mutation deleteTest2Tables($where: test2Tables_bool_exp!) {
+  deleteTest2Tables(where: $where) {
+    ...deleteTest2Tables_test2Tables_mutation_response
+  }
+}
+    ${DeleteTest2Tables_Test2Tables_Mutation_ResponseFragmentDoc}`;
+
+export function useDeleteTest2TablesMutation() {
+  return Urql.useMutation<DeleteTest2TablesMutation, DeleteTest2TablesMutationVariables>(DeleteTest2TablesDocument);
+};
+export const InsertTest2TableDocument = gql`
+    mutation insertTest2Table($test2Tables: test2Tables_insert_input!, $on_conflict: test2Tables_on_conflict) {
+  insertTest2Table(object: $test2Tables, on_conflict: $on_conflict) {
+    ...insertTest2Table_test2Tables
+  }
+}
+    ${InsertTest2Table_Test2TablesFragmentDoc}`;
+
+export function useInsertTest2TableMutation() {
+  return Urql.useMutation<InsertTest2TableMutation, InsertTest2TableMutationVariables>(InsertTest2TableDocument);
+};
+export const InsertTest2TablesDocument = gql`
+    mutation insertTest2Tables($test2Tables: [test2Tables_insert_input!]!, $on_conflict: test2Tables_on_conflict) {
+  insertTest2Tables(objects: $test2Tables, on_conflict: $on_conflict) {
+    ...insertTest2Tables_test2Tables_mutation_response
+  }
+}
+    ${InsertTest2Tables_Test2Tables_Mutation_ResponseFragmentDoc}`;
+
+export function useInsertTest2TablesMutation() {
+  return Urql.useMutation<InsertTest2TablesMutation, InsertTest2TablesMutationVariables>(InsertTest2TablesDocument);
+};
+export const UpdateTest2TableDocument = gql`
+    mutation updateTest2Table($test2Tables: test2Tables_set_input, $pk_columns: test2Tables_pk_columns_input!) {
+  updateTest2Table(_set: $test2Tables, pk_columns: $pk_columns) {
+    ...updateTest2Table_test2Tables
+  }
+}
+    ${UpdateTest2Table_Test2TablesFragmentDoc}`;
+
+export function useUpdateTest2TableMutation() {
+  return Urql.useMutation<UpdateTest2TableMutation, UpdateTest2TableMutationVariables>(UpdateTest2TableDocument);
+};
+export const UpdateTest2TablesDocument = gql`
+    mutation updateTest2Tables($test2Tables: test2Tables_set_input, $where: test2Tables_bool_exp!) {
+  updateTest2Tables(_set: $test2Tables, where: $where) {
+    ...updateTest2Tables_test2Tables_mutation_response
+  }
+}
+    ${UpdateTest2Tables_Test2Tables_Mutation_ResponseFragmentDoc}`;
+
+export function useUpdateTest2TablesMutation() {
+  return Urql.useMutation<UpdateTest2TablesMutation, UpdateTest2TablesMutationVariables>(UpdateTest2TablesDocument);
 };
 export const Test1TableDocument = gql`
     query test1Table($id: uuid!) {

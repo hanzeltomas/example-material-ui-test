@@ -1,0 +1,160 @@
+query test2Table($id: uuid!) {
+  test2Table(id: $id) {
+    ...test2Table_test2Tables
+  }
+}
+
+query test2Tables($distinct_on: [test2Tables_select_column!], $limit: Int, $offset: Int, $order_by: [test2Tables_order_by!] = { updatedAt: desc }, $where: test2Tables_bool_exp) {
+  test2Tables(distinct_on: $distinct_on, limit: $limit, offset: $offset, order_by: $order_by, where: $where) {
+    ...test2Tables_test2Tables
+  }
+}
+
+mutation deleteTest2Table($id: uuid!) {
+  deleteTest2Table(id: $id) {
+    ...deleteTest2Table_test2Tables
+  }
+}
+
+mutation deleteTest2Tables($where: test2Tables_bool_exp!) {
+  deleteTest2Tables(where: $where) {
+    ...deleteTest2Tables_test2Tables_mutation_response
+  }
+}
+
+mutation insertTest2Table($test2Tables: test2Tables_insert_input!, $on_conflict: test2Tables_on_conflict) {
+  insertTest2Table(object: $test2Tables, on_conflict: $on_conflict) {
+    ...insertTest2Table_test2Tables
+  }
+}
+
+mutation insertTest2Tables($test2Tables: [test2Tables_insert_input!]!, $on_conflict: test2Tables_on_conflict) {
+  insertTest2Tables(objects: $test2Tables, on_conflict: $on_conflict) {
+    ...insertTest2Tables_test2Tables_mutation_response
+  }
+}
+
+mutation updateTest2Table($test2Tables: test2Tables_set_input, $pk_columns: test2Tables_pk_columns_input!) {
+  updateTest2Table(_set: $test2Tables, pk_columns: $pk_columns) {
+    ...updateTest2Table_test2Tables
+  }
+}
+
+mutation updateTest2Tables($test2Tables: test2Tables_set_input, $where: test2Tables_bool_exp!) {
+  updateTest2Tables(_set: $test2Tables, where: $where) {
+    ...updateTest2Tables_test2Tables_mutation_response
+  }
+}
+
+fragment test2Table_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment test2Tables_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment deleteTest2Table_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment deleteTest2Tables_test2Tables_mutation_response on test2Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    test6Name
+    testName
+    updatedAt
+  }
+}
+
+fragment insertTest2Table_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment insertTest2Tables_test2Tables_mutation_response on test2Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    test6Name
+    testName
+    updatedAt
+  }
+}
+
+fragment updateTest2Table_test2Tables on test2Tables {
+  id
+  name
+  test2Name
+  test3Name
+  test4Name
+  test5Name
+  test6Name
+  testName
+  createdAt
+  updatedAt
+}
+
+fragment updateTest2Tables_test2Tables_mutation_response on test2Tables_mutation_response {
+  returning {
+    createdAt
+    id
+    isDeleted
+    name
+    test2Name
+    test3Name
+    test4Name
+    test5Name
+    test6Name
+    testName
+    updatedAt
+  }
+}
